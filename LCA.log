@@ -1,0 +1,2007 @@
+----------------------------------------------------------------------------------------------------------------------------------
+      name:  <unnamed>
+       log:  C:\Users\eran\Documents\model_output.log
+  log type:  text
+ opened on:  16 Feb 2024, 23:13:59
+
+. 
+. 
+. use "C:\Users\eran\Desktop\ExEvalWGICOL.dta"
+
+. 
+. 
+. foreach num of numlist 1/5 {
+  2. 
+.     local modelname model`num'
+  3. 
+.     gsem (ctrlcrp goveff polstab regqual lawrule voicacc <- , regress ), logit lclass(Class `num')
+  4. 
+.     estimates store `modelname'
+  5. 
+.     estat ic
+  6. 
+. }
+
+Iteration 0:   log likelihood = -3536.3373  
+Iteration 1:   log likelihood = -3536.3373  
+
+Generalized structural equation model                      Number of obs = 127
+Log likelihood = -3536.3373
+
+------------------------------------------------------------------------------
+             | Coefficient  Std. err.      z    P>|z|     [95% conf. interval]
+-------------+----------------------------------------------------------------
+1.Class      |  (base outcome)
+------------------------------------------------------------------------------
+
+Class:    1       
+Response: ctrlcrp 
+Family:   Gaussian
+Link:     Identity
+Response: goveff  
+Family:   Gaussian
+Link:     Identity
+Response: polstab 
+Family:   Gaussian
+Link:     Identity
+Response: regqual 
+Family:   Gaussian
+Link:     Identity
+Response: lawrule 
+Family:   Gaussian
+Link:     Identity
+Response: voicacc 
+Family:   Gaussian
+Link:     Identity
+
+--------------------------------------------------------------------------------
+               | Coefficient  Std. err.      z    P>|z|     [95% conf. interval]
+---------------+----------------------------------------------------------------
+ctrlcrp        |
+         _cons |   43.03896   2.212569    19.45   0.000      38.7024    47.37551
+---------------+----------------------------------------------------------------
+goveff         |
+         _cons |   41.58982   2.192819    18.97   0.000     37.29198    45.88767
+---------------+----------------------------------------------------------------
+polstab        |
+         _cons |   44.14013   2.375376    18.58   0.000     39.48448    48.79579
+---------------+----------------------------------------------------------------
+regqual        |
+         _cons |    41.2326   2.115185    19.49   0.000     37.08691    45.37828
+---------------+----------------------------------------------------------------
+lawrule        |
+         _cons |   42.09915   2.221978    18.95   0.000     37.74416    46.45415
+---------------+----------------------------------------------------------------
+voicacc        |
+         _cons |   43.12884   2.241051    19.24   0.000     38.73646    47.52122
+---------------+----------------------------------------------------------------
+ var(e.ctrlcrp)|   621.7235    78.0208                      486.1598    795.0887
+  var(e.goveff)|   610.6737   76.63415                      477.5193    780.9577
+ var(e.polstab)|   716.5865   89.92527                      560.3384    916.4038
+ var(e.regqual)|   568.1987   71.30392                      444.3058    726.6387
+ var(e.lawrule)|   627.0228   78.68581                      490.3036    801.8656
+ var(e.voicacc)|   637.8333   80.04245                      498.7569    815.6906
+--------------------------------------------------------------------------------
+
+Akaike's information criterion and Bayesian information criterion
+
+-----------------------------------------------------------------------------
+       Model |          N   ll(null)  ll(model)      df        AIC        BIC
+-------------+---------------------------------------------------------------
+      model1 |        127          .  -3536.337      12   7096.675   7130.805
+-----------------------------------------------------------------------------
+Note: BIC uses N = number of observations. See [R] BIC note.
+
+Fitting class model:
+
+Iteration 0:   (class) log likelihood = -88.025755  
+Iteration 1:   (class) log likelihood = -88.025755  
+
+Fitting outcome model:
+
+Iteration 0:   (outcome) log likelihood = -3227.9275  
+Iteration 1:   (outcome) log likelihood = -3227.9265  
+Iteration 2:   (outcome) log likelihood = -3227.9265  
+
+Refining starting values:
+
+Iteration 0:   (EM) log likelihood = -3318.7556
+Iteration 1:   (EM) log likelihood = -3318.1023
+Iteration 2:   (EM) log likelihood = -3317.7083
+Iteration 3:   (EM) log likelihood = -3317.5338
+Iteration 4:   (EM) log likelihood = -3317.4641
+Iteration 5:   (EM) log likelihood = -3317.4392
+Iteration 6:   (EM) log likelihood = -3317.4325
+Iteration 7:   (EM) log likelihood = -3317.4326
+
+Fitting full model:
+
+Iteration 0:   log likelihood = -3309.4175  
+Iteration 1:   log likelihood = -3309.4121  
+Iteration 2:   log likelihood = -3309.4121  
+
+Generalized structural equation model                      Number of obs = 127
+Log likelihood = -3309.4121
+
+ ( 1)  [/]var(e.ctrlcrp)#1bn.Class - [/]var(e.ctrlcrp)#2.Class = 0
+ ( 2)  [/]var(e.goveff)#1bn.Class - [/]var(e.goveff)#2.Class = 0
+ ( 3)  [/]var(e.polstab)#1bn.Class - [/]var(e.polstab)#2.Class = 0
+ ( 4)  [/]var(e.regqual)#1bn.Class - [/]var(e.regqual)#2.Class = 0
+ ( 5)  [/]var(e.lawrule)#1bn.Class - [/]var(e.lawrule)#2.Class = 0
+ ( 6)  [/]var(e.voicacc)#1bn.Class - [/]var(e.voicacc)#2.Class = 0
+
+------------------------------------------------------------------------------
+             | Coefficient  Std. err.      z    P>|z|     [95% conf. interval]
+-------------+----------------------------------------------------------------
+1.Class      |  (base outcome)
+-------------+----------------------------------------------------------------
+2.Class      |
+       _cons |  -.1971127   .2005104    -0.98   0.326    -.5901059    .1958806
+------------------------------------------------------------------------------
+
+Class:    1       
+
+Response: ctrlcrp 
+Family:   Gaussian
+Link:     Identity
+
+Response: goveff  
+Family:   Gaussian
+Link:     Identity
+
+Response: polstab 
+Family:   Gaussian
+Link:     Identity
+
+Response: regqual 
+Family:   Gaussian
+Link:     Identity
+
+Response: lawrule 
+Family:   Gaussian
+Link:     Identity
+
+Response: voicacc 
+Family:   Gaussian
+Link:     Identity
+
+--------------------------------------------------------------------------------
+               | Coefficient  Std. err.      z    P>|z|     [95% conf. interval]
+---------------+----------------------------------------------------------------
+ctrlcrp        |
+         _cons |   25.06265    1.97262    12.71   0.000     21.19639    28.92891
+---------------+----------------------------------------------------------------
+goveff         |
+         _cons |    24.1156   2.028068    11.89   0.000     20.14066    28.09054
+---------------+----------------------------------------------------------------
+polstab        |
+         _cons |   27.45773   2.520119    10.90   0.000     22.51839    32.39707
+---------------+----------------------------------------------------------------
+regqual        |
+         _cons |   26.57642   2.206162    12.05   0.000     22.25242    30.90041
+---------------+----------------------------------------------------------------
+lawrule        |
+         _cons |    23.6453   1.939798    12.19   0.000     19.84337    27.44723
+---------------+----------------------------------------------------------------
+voicacc        |
+         _cons |   28.32803   2.577934    10.99   0.000     23.27538    33.38069
+---------------+----------------------------------------------------------------
+ var(e.ctrlcrp)|    228.168   30.20946                      176.0174    295.7699
+  var(e.goveff)|   238.7955   32.59652                        182.74    312.0459
+ var(e.polstab)|   377.6469   53.18724                      286.5523    497.7003
+ var(e.regqual)|   306.5934   40.06047                      237.3242    396.0806
+ var(e.lawrule)|   212.2797   27.55081                       164.602    273.7676
+ var(e.voicacc)|   371.0395   50.66287                      283.9191    484.8929
+--------------------------------------------------------------------------------
+
+Class:    2       
+
+Response: ctrlcrp 
+Family:   Gaussian
+Link:     Identity
+
+Response: goveff  
+Family:   Gaussian
+Link:     Identity
+
+Response: polstab 
+Family:   Gaussian
+Link:     Identity
+
+Response: regqual 
+Family:   Gaussian
+Link:     Identity
+
+Response: lawrule 
+Family:   Gaussian
+Link:     Identity
+
+Response: voicacc 
+Family:   Gaussian
+Link:     Identity
+
+--------------------------------------------------------------------------------
+               | Coefficient  Std. err.      z    P>|z|     [95% conf. interval]
+---------------+----------------------------------------------------------------
+ctrlcrp        |
+         _cons |   64.93197   2.285345    28.41   0.000     60.45277    69.41116
+---------------+----------------------------------------------------------------
+goveff         |
+         _cons |   62.87135   2.306597    27.26   0.000     58.35051     67.3922
+---------------+----------------------------------------------------------------
+polstab        |
+         _cons |   64.45733    2.82638    22.81   0.000     58.91772    69.99693
+---------------+----------------------------------------------------------------
+regqual        |
+         _cons |   59.08208   2.506826    23.57   0.000     54.16879    63.99537
+---------------+----------------------------------------------------------------
+lawrule        |
+         _cons |   64.57376   2.198928    29.37   0.000     60.26394    68.88358
+---------------+----------------------------------------------------------------
+voicacc        |
+         _cons |   61.15447   2.605552    23.47   0.000     56.04768    66.26125
+---------------+----------------------------------------------------------------
+ var(e.ctrlcrp)|    228.168   30.20946                      176.0174    295.7699
+  var(e.goveff)|   238.7955   32.59652                        182.74    312.0459
+ var(e.polstab)|   377.6469   53.18724                      286.5523    497.7003
+ var(e.regqual)|   306.5934   40.06047                      237.3242    396.0806
+ var(e.lawrule)|   212.2797   27.55081                       164.602    273.7676
+ var(e.voicacc)|   371.0395   50.66287                      283.9191    484.8929
+--------------------------------------------------------------------------------
+
+Akaike's information criterion and Bayesian information criterion
+
+-----------------------------------------------------------------------------
+       Model |          N   ll(null)  ll(model)      df        AIC        BIC
+-------------+---------------------------------------------------------------
+      model2 |        127          .  -3309.412      19   6656.824   6710.864
+-----------------------------------------------------------------------------
+Note: BIC uses N = number of observations. See [R] BIC note.
+
+Fitting class model:
+
+Iteration 0:   (class) log likelihood = -139.51591  
+Iteration 1:   (class) log likelihood = -139.51591  
+
+Fitting outcome model:
+
+Iteration 0:   (outcome) log likelihood = -3082.0358  
+Iteration 1:   (outcome) log likelihood = -3082.0343  
+Iteration 2:   (outcome) log likelihood = -3082.0343  
+
+Refining starting values:
+
+Iteration 0:   (EM) log likelihood = -3217.1281
+Iteration 1:   (EM) log likelihood = -3209.8017
+Iteration 2:   (EM) log likelihood = -3206.5197
+Iteration 3:   (EM) log likelihood = -3206.1566
+Iteration 4:   (EM) log likelihood = -3206.1572
+
+Fitting full model:
+
+Iteration 0:   log likelihood = -3197.4638  
+Iteration 1:   log likelihood = -3197.3513  
+Iteration 2:   log likelihood = -3197.3502  
+Iteration 3:   log likelihood = -3197.3502  
+
+Generalized structural equation model                      Number of obs = 127
+Log likelihood = -3197.3502
+
+ ( 1)  [/]var(e.ctrlcrp)#1bn.Class - [/]var(e.ctrlcrp)#3.Class = 0
+ ( 2)  [/]var(e.ctrlcrp)#2.Class - [/]var(e.ctrlcrp)#3.Class = 0
+ ( 3)  [/]var(e.goveff)#1bn.Class - [/]var(e.goveff)#3.Class = 0
+ ( 4)  [/]var(e.goveff)#2.Class - [/]var(e.goveff)#3.Class = 0
+ ( 5)  [/]var(e.polstab)#1bn.Class - [/]var(e.polstab)#3.Class = 0
+ ( 6)  [/]var(e.polstab)#2.Class - [/]var(e.polstab)#3.Class = 0
+ ( 7)  [/]var(e.regqual)#1bn.Class - [/]var(e.regqual)#3.Class = 0
+ ( 8)  [/]var(e.regqual)#2.Class - [/]var(e.regqual)#3.Class = 0
+ ( 9)  [/]var(e.lawrule)#1bn.Class - [/]var(e.lawrule)#3.Class = 0
+ (10)  [/]var(e.lawrule)#2.Class - [/]var(e.lawrule)#3.Class = 0
+ (11)  [/]var(e.voicacc)#1bn.Class - [/]var(e.voicacc)#3.Class = 0
+ (12)  [/]var(e.voicacc)#2.Class - [/]var(e.voicacc)#3.Class = 0
+
+------------------------------------------------------------------------------
+             | Coefficient  Std. err.      z    P>|z|     [95% conf. interval]
+-------------+----------------------------------------------------------------
+1.Class      |  (base outcome)
+-------------+----------------------------------------------------------------
+2.Class      |
+       _cons |   .0739868   .2224478     0.33   0.739    -.3620029    .5099765
+-------------+----------------------------------------------------------------
+3.Class      |
+       _cons |   -.335348   .2420936    -1.39   0.166    -.8098428    .1391468
+------------------------------------------------------------------------------
+
+Class:    1       
+
+Response: ctrlcrp 
+Family:   Gaussian
+Link:     Identity
+
+Response: goveff  
+Family:   Gaussian
+Link:     Identity
+
+Response: polstab 
+Family:   Gaussian
+Link:     Identity
+
+Response: regqual 
+Family:   Gaussian
+Link:     Identity
+
+Response: lawrule 
+Family:   Gaussian
+Link:     Identity
+
+Response: voicacc 
+Family:   Gaussian
+Link:     Identity
+
+--------------------------------------------------------------------------------
+               | Coefficient  Std. err.      z    P>|z|     [95% conf. interval]
+---------------+----------------------------------------------------------------
+ctrlcrp        |
+         _cons |   18.78488   1.727269    10.88   0.000      15.3995    22.17027
+---------------+----------------------------------------------------------------
+goveff         |
+         _cons |   16.73436   1.821571     9.19   0.000     13.16415    20.30458
+---------------+----------------------------------------------------------------
+polstab        |
+         _cons |   20.77054   2.750774     7.55   0.000     15.37912    26.16196
+---------------+----------------------------------------------------------------
+regqual        |
+         _cons |   19.29249   2.208748     8.73   0.000     14.96343    23.62156
+---------------+----------------------------------------------------------------
+lawrule        |
+         _cons |   15.81308   1.719771     9.19   0.000     12.44239    19.18377
+---------------+----------------------------------------------------------------
+voicacc        |
+         _cons |   21.76594   2.833589     7.68   0.000     16.21221    27.31968
+---------------+----------------------------------------------------------------
+ var(e.ctrlcrp)|   126.4087   17.19538                       96.8251    165.0311
+  var(e.goveff)|   130.8498   17.87193                      100.1182    171.0146
+ var(e.polstab)|   329.3929   43.11277                      254.8615    425.7201
+ var(e.regqual)|   174.4336   24.29563                      132.7615    229.1859
+ var(e.lawrule)|   119.6899   16.54716                      91.28067     156.941
+ var(e.voicacc)|   342.8847   44.65483                      265.6402    442.5909
+--------------------------------------------------------------------------------
+
+Class:    2       
+
+Response: ctrlcrp 
+Family:   Gaussian
+Link:     Identity
+
+Response: goveff  
+Family:   Gaussian
+Link:     Identity
+
+Response: polstab 
+Family:   Gaussian
+Link:     Identity
+
+Response: regqual 
+Family:   Gaussian
+Link:     Identity
+
+Response: lawrule 
+Family:   Gaussian
+Link:     Identity
+
+Response: voicacc 
+Family:   Gaussian
+Link:     Identity
+
+--------------------------------------------------------------------------------
+               | Coefficient  Std. err.      z    P>|z|     [95% conf. interval]
+---------------+----------------------------------------------------------------
+ctrlcrp        |
+         _cons |   43.42842   1.944061    22.34   0.000     39.61813     47.2387
+---------------+----------------------------------------------------------------
+goveff         |
+         _cons |   43.63994   1.915869    22.78   0.000     39.88491    47.39498
+---------------+----------------------------------------------------------------
+polstab        |
+         _cons |   47.94795   2.794876    17.16   0.000      42.4701    53.42581
+---------------+----------------------------------------------------------------
+regqual        |
+         _cons |   42.09831    1.95981    21.48   0.000     38.25716    45.93947
+---------------+----------------------------------------------------------------
+lawrule        |
+         _cons |   45.54583   1.889849    24.10   0.000      41.8418    49.24987
+---------------+----------------------------------------------------------------
+voicacc        |
+         _cons |   48.59673   2.773451    17.52   0.000     43.16086    54.03259
+---------------+----------------------------------------------------------------
+ var(e.ctrlcrp)|   126.4087   17.19538                       96.8251    165.0311
+  var(e.goveff)|   130.8498   17.87193                      100.1182    171.0146
+ var(e.polstab)|   329.3929   43.11277                      254.8615    425.7201
+ var(e.regqual)|   174.4336   24.29563                      132.7615    229.1859
+ var(e.lawrule)|   119.6899   16.54716                      91.28067     156.941
+ var(e.voicacc)|   342.8847   44.65483                      265.6402    442.5909
+--------------------------------------------------------------------------------
+
+Class:    3       
+
+Response: ctrlcrp 
+Family:   Gaussian
+Link:     Identity
+
+Response: goveff  
+Family:   Gaussian
+Link:     Identity
+
+Response: polstab 
+Family:   Gaussian
+Link:     Identity
+
+Response: regqual 
+Family:   Gaussian
+Link:     Identity
+
+Response: lawrule 
+Family:   Gaussian
+Link:     Identity
+
+Response: voicacc 
+Family:   Gaussian
+Link:     Identity
+
+--------------------------------------------------------------------------------
+               | Coefficient  Std. err.      z    P>|z|     [95% conf. interval]
+---------------+----------------------------------------------------------------
+ctrlcrp        |
+         _cons |   76.37006   2.086224    36.61   0.000     72.28113    80.45898
+---------------+----------------------------------------------------------------
+goveff         |
+         _cons |   73.26127   2.084815    35.14   0.000     69.17511    77.34743
+---------------+----------------------------------------------------------------
+polstab        |
+         _cons |   71.08694   3.329201    21.35   0.000     64.56182    77.61205
+---------------+----------------------------------------------------------------
+regqual        |
+         _cons |   70.61062   2.485806    28.41   0.000     65.73852    75.48271
+---------------+----------------------------------------------------------------
+lawrule        |
+         _cons |   73.66825   2.042904    36.06   0.000     69.66423    77.67227
+---------------+----------------------------------------------------------------
+voicacc        |
+         _cons |   64.76967   3.598803    18.00   0.000     57.71614    71.82319
+---------------+----------------------------------------------------------------
+ var(e.ctrlcrp)|   126.4087   17.19538                       96.8251    165.0311
+  var(e.goveff)|   130.8498   17.87193                      100.1182    171.0146
+ var(e.polstab)|   329.3929   43.11277                      254.8615    425.7201
+ var(e.regqual)|   174.4336   24.29563                      132.7615    229.1859
+ var(e.lawrule)|   119.6899   16.54716                      91.28067     156.941
+ var(e.voicacc)|   342.8847   44.65483                      265.6402    442.5909
+--------------------------------------------------------------------------------
+
+Akaike's information criterion and Bayesian information criterion
+
+-----------------------------------------------------------------------------
+       Model |          N   ll(null)  ll(model)      df        AIC        BIC
+-------------+---------------------------------------------------------------
+      model3 |        127          .   -3197.35      26     6446.7   6520.649
+-----------------------------------------------------------------------------
+Note: BIC uses N = number of observations. See [R] BIC note.
+
+Fitting class model:
+
+Iteration 0:   (class) log likelihood = -176.04751  
+Iteration 1:   (class) log likelihood = -176.04751  
+
+Fitting outcome model:
+
+Iteration 0:   (outcome) log likelihood = -3014.2344  
+Iteration 1:   (outcome) log likelihood = -3014.2321  
+Iteration 2:   (outcome) log likelihood = -3014.2321  
+
+Refining starting values:
+
+Iteration 0:   (EM) log likelihood = -3194.8036
+Iteration 1:   (EM) log likelihood = -3192.1381
+Iteration 2:   (EM) log likelihood = -3190.2153
+Iteration 3:   (EM) log likelihood = -3188.6532
+Iteration 4:   (EM) log likelihood = -3187.2958
+Iteration 5:   (EM) log likelihood = -3186.1245
+Iteration 6:   (EM) log likelihood = -3185.2078
+Iteration 7:   (EM) log likelihood =  -3184.582
+Iteration 8:   (EM) log likelihood = -3184.1937
+Iteration 9:   (EM) log likelihood = -3183.9623
+Iteration 10:  (EM) log likelihood = -3183.8265
+Iteration 11:  (EM) log likelihood =  -3183.749
+Iteration 12:  (EM) log likelihood = -3183.7077
+Iteration 13:  (EM) log likelihood = -3183.6897
+Iteration 14:  (EM) log likelihood = -3183.6866
+
+Fitting full model:
+
+Iteration 0:   log likelihood =  -3166.559  
+Iteration 1:   log likelihood = -3166.4842  
+Iteration 2:   log likelihood = -3166.4827  
+Iteration 3:   log likelihood = -3166.4827  
+
+Generalized structural equation model                      Number of obs = 127
+Log likelihood = -3166.4827
+
+ ( 1)  [/]var(e.ctrlcrp)#1bn.Class - [/]var(e.ctrlcrp)#4.Class = 0
+ ( 2)  [/]var(e.ctrlcrp)#2.Class - [/]var(e.ctrlcrp)#4.Class = 0
+ ( 3)  [/]var(e.ctrlcrp)#3.Class - [/]var(e.ctrlcrp)#4.Class = 0
+ ( 4)  [/]var(e.goveff)#1bn.Class - [/]var(e.goveff)#4.Class = 0
+ ( 5)  [/]var(e.goveff)#2.Class - [/]var(e.goveff)#4.Class = 0
+ ( 6)  [/]var(e.goveff)#3.Class - [/]var(e.goveff)#4.Class = 0
+ ( 7)  [/]var(e.polstab)#1bn.Class - [/]var(e.polstab)#4.Class = 0
+ ( 8)  [/]var(e.polstab)#2.Class - [/]var(e.polstab)#4.Class = 0
+ ( 9)  [/]var(e.polstab)#3.Class - [/]var(e.polstab)#4.Class = 0
+ (10)  [/]var(e.regqual)#1bn.Class - [/]var(e.regqual)#4.Class = 0
+ (11)  [/]var(e.regqual)#2.Class - [/]var(e.regqual)#4.Class = 0
+ (12)  [/]var(e.regqual)#3.Class - [/]var(e.regqual)#4.Class = 0
+ (13)  [/]var(e.lawrule)#1bn.Class - [/]var(e.lawrule)#4.Class = 0
+ (14)  [/]var(e.lawrule)#2.Class - [/]var(e.lawrule)#4.Class = 0
+ (15)  [/]var(e.lawrule)#3.Class - [/]var(e.lawrule)#4.Class = 0
+ (16)  [/]var(e.voicacc)#1bn.Class - [/]var(e.voicacc)#4.Class = 0
+ (17)  [/]var(e.voicacc)#2.Class - [/]var(e.voicacc)#4.Class = 0
+ (18)  [/]var(e.voicacc)#3.Class - [/]var(e.voicacc)#4.Class = 0
+
+------------------------------------------------------------------------------
+             | Coefficient  Std. err.      z    P>|z|     [95% conf. interval]
+-------------+----------------------------------------------------------------
+1.Class      |  (base outcome)
+-------------+----------------------------------------------------------------
+2.Class      |
+       _cons |   .0617904   .2701774     0.23   0.819    -.4677475    .5913284
+-------------+----------------------------------------------------------------
+3.Class      |
+       _cons |  -.1176007   .3039541    -0.39   0.699    -.7133397    .4781384
+-------------+----------------------------------------------------------------
+4.Class      |
+       _cons |  -.3581901    .307278    -1.17   0.244     -.960444    .2440638
+------------------------------------------------------------------------------
+
+Class:    1       
+
+Response: ctrlcrp 
+Family:   Gaussian
+Link:     Identity
+
+Response: goveff  
+Family:   Gaussian
+Link:     Identity
+
+Response: polstab 
+Family:   Gaussian
+Link:     Identity
+
+Response: regqual 
+Family:   Gaussian
+Link:     Identity
+
+Response: lawrule 
+Family:   Gaussian
+Link:     Identity
+
+Response: voicacc 
+Family:   Gaussian
+Link:     Identity
+
+--------------------------------------------------------------------------------
+               | Coefficient  Std. err.      z    P>|z|     [95% conf. interval]
+---------------+----------------------------------------------------------------
+ctrlcrp        |
+         _cons |   14.66948   2.028685     7.23   0.000     10.69333    18.64562
+---------------+----------------------------------------------------------------
+goveff         |
+         _cons |   13.56775   1.986409     6.83   0.000     9.674462    17.46104
+---------------+----------------------------------------------------------------
+polstab        |
+         _cons |   19.19188   3.162908     6.07   0.000     12.99269    25.39106
+---------------+----------------------------------------------------------------
+regqual        |
+         _cons |   16.45267   2.234618     7.36   0.000      12.0729    20.83244
+---------------+----------------------------------------------------------------
+lawrule        |
+         _cons |   12.67431   2.007005     6.32   0.000     8.740649    16.60796
+---------------+----------------------------------------------------------------
+voicacc        |
+         _cons |   20.71992   3.274051     6.33   0.000      14.3029    27.13694
+---------------+----------------------------------------------------------------
+ var(e.ctrlcrp)|   87.66617   14.07599                      63.99707    120.0892
+  var(e.goveff)|   106.8093   15.93458                      79.72979    143.0861
+ var(e.polstab)|    330.744   45.67166                        252.32    433.5433
+ var(e.regqual)|   153.5808   20.56766                      118.1254    199.6782
+ var(e.lawrule)|   95.04123   14.30559                      70.76025    127.6541
+ var(e.voicacc)|   341.1343   44.30778                       264.465    440.0303
+--------------------------------------------------------------------------------
+
+Class:    2       
+
+Response: ctrlcrp 
+Family:   Gaussian
+Link:     Identity
+
+Response: goveff  
+Family:   Gaussian
+Link:     Identity
+
+Response: polstab 
+Family:   Gaussian
+Link:     Identity
+
+Response: regqual 
+Family:   Gaussian
+Link:     Identity
+
+Response: lawrule 
+Family:   Gaussian
+Link:     Identity
+
+Response: voicacc 
+Family:   Gaussian
+Link:     Identity
+
+--------------------------------------------------------------------------------
+               | Coefficient  Std. err.      z    P>|z|     [95% conf. interval]
+---------------+----------------------------------------------------------------
+ctrlcrp        |
+         _cons |   35.58792   2.370853    15.01   0.000     30.94113     40.2347
+---------------+----------------------------------------------------------------
+goveff         |
+         _cons |   34.86609   2.946857    11.83   0.000     29.09036    40.64183
+---------------+----------------------------------------------------------------
+polstab        |
+         _cons |   36.96721   3.355968    11.02   0.000     30.38963    43.54478
+---------------+----------------------------------------------------------------
+regqual        |
+         _cons |   36.92215   2.985683    12.37   0.000     31.07032    42.77398
+---------------+----------------------------------------------------------------
+lawrule        |
+         _cons |   34.91132   2.321806    15.04   0.000     30.36066    39.46198
+---------------+----------------------------------------------------------------
+voicacc        |
+         _cons |   37.60344   3.908282     9.62   0.000     29.94335    45.26353
+---------------+----------------------------------------------------------------
+ var(e.ctrlcrp)|   87.66617   14.07599                      63.99707    120.0892
+  var(e.goveff)|   106.8093   15.93458                      79.72979    143.0861
+ var(e.polstab)|    330.744   45.67166                        252.32    433.5433
+ var(e.regqual)|   153.5808   20.56766                      118.1254    199.6782
+ var(e.lawrule)|   95.04123   14.30559                      70.76025    127.6541
+ var(e.voicacc)|   341.1343   44.30778                       264.465    440.0303
+--------------------------------------------------------------------------------
+
+Class:    3       
+
+Response: ctrlcrp 
+Family:   Gaussian
+Link:     Identity
+
+Response: goveff  
+Family:   Gaussian
+Link:     Identity
+
+Response: polstab 
+Family:   Gaussian
+Link:     Identity
+
+Response: regqual 
+Family:   Gaussian
+Link:     Identity
+
+Response: lawrule 
+Family:   Gaussian
+Link:     Identity
+
+Response: voicacc 
+Family:   Gaussian
+Link:     Identity
+
+--------------------------------------------------------------------------------
+               | Coefficient  Std. err.      z    P>|z|     [95% conf. interval]
+---------------+----------------------------------------------------------------
+ctrlcrp        |
+         _cons |    54.6204   2.714612    20.12   0.000     49.29986    59.94094
+---------------+----------------------------------------------------------------
+goveff         |
+         _cons |   53.12671   2.401932    22.12   0.000     48.41901    57.83441
+---------------+----------------------------------------------------------------
+polstab        |
+         _cons |   59.04936   4.555973    12.96   0.000     50.11982    67.97891
+---------------+----------------------------------------------------------------
+regqual        |
+         _cons |   46.80331   2.652359    17.65   0.000     41.60479    52.00184
+---------------+----------------------------------------------------------------
+lawrule        |
+         _cons |   56.64219   2.873185    19.71   0.000     51.01085    62.27352
+---------------+----------------------------------------------------------------
+voicacc        |
+         _cons |   56.22328    3.64534    15.42   0.000     49.07855    63.36802
+---------------+----------------------------------------------------------------
+ var(e.ctrlcrp)|   87.66617   14.07599                      63.99707    120.0892
+  var(e.goveff)|   106.8093   15.93458                      79.72979    143.0861
+ var(e.polstab)|    330.744   45.67166                        252.32    433.5433
+ var(e.regqual)|   153.5808   20.56766                      118.1254    199.6782
+ var(e.lawrule)|   95.04123   14.30559                      70.76025    127.6541
+ var(e.voicacc)|   341.1343   44.30778                       264.465    440.0303
+--------------------------------------------------------------------------------
+
+Class:    4       
+
+Response: ctrlcrp 
+Family:   Gaussian
+Link:     Identity
+
+Response: goveff  
+Family:   Gaussian
+Link:     Identity
+
+Response: polstab 
+Family:   Gaussian
+Link:     Identity
+
+Response: regqual 
+Family:   Gaussian
+Link:     Identity
+
+Response: lawrule 
+Family:   Gaussian
+Link:     Identity
+
+Response: voicacc 
+Family:   Gaussian
+Link:     Identity
+
+--------------------------------------------------------------------------------
+               | Coefficient  Std. err.      z    P>|z|     [95% conf. interval]
+---------------+----------------------------------------------------------------
+ctrlcrp        |
+         _cons |   80.23664    2.11317    37.97   0.000     76.09491    84.37838
+---------------+----------------------------------------------------------------
+goveff         |
+         _cons |   77.24021   2.387504    32.35   0.000     72.56079    81.91963
+---------------+----------------------------------------------------------------
+polstab        |
+         _cons |   71.78673   3.881183    18.50   0.000     64.17975    79.39371
+---------------+----------------------------------------------------------------
+regqual        |
+         _cons |   76.16042   2.812725    27.08   0.000     70.64758    81.67326
+---------------+----------------------------------------------------------------
+lawrule        |
+         _cons |   76.63907   2.337046    32.79   0.000     72.05854    81.21959
+---------------+----------------------------------------------------------------
+voicacc        |
+         _cons |   66.94329   3.836191    17.45   0.000      59.4245    74.46209
+---------------+----------------------------------------------------------------
+ var(e.ctrlcrp)|   87.66617   14.07599                      63.99707    120.0892
+  var(e.goveff)|   106.8093   15.93458                      79.72979    143.0861
+ var(e.polstab)|    330.744   45.67166                        252.32    433.5433
+ var(e.regqual)|   153.5808   20.56766                      118.1254    199.6782
+ var(e.lawrule)|   95.04123   14.30559                      70.76025    127.6541
+ var(e.voicacc)|   341.1343   44.30778                       264.465    440.0303
+--------------------------------------------------------------------------------
+
+Akaike's information criterion and Bayesian information criterion
+
+-----------------------------------------------------------------------------
+       Model |          N   ll(null)  ll(model)      df        AIC        BIC
+-------------+---------------------------------------------------------------
+      model4 |        127          .  -3166.483      33   6398.965   6492.824
+-----------------------------------------------------------------------------
+Note: BIC uses N = number of observations. See [R] BIC note.
+
+Fitting class model:
+
+Iteration 0:   (class) log likelihood = -204.37505  
+Iteration 1:   (class) log likelihood = -204.37505  
+
+Fitting outcome model:
+
+Iteration 0:   (outcome) log likelihood = -2978.3741  
+Iteration 1:   (outcome) log likelihood = -2978.3654  
+Iteration 2:   (outcome) log likelihood = -2978.3654  
+
+Refining starting values:
+
+Iteration 0:   (EM) log likelihood = -3178.6581
+Iteration 1:   (EM) log likelihood = -3172.1092
+Iteration 2:   (EM) log likelihood =  -3169.184
+Iteration 3:   (EM) log likelihood = -3167.2885
+Iteration 4:   (EM) log likelihood = -3166.0507
+Iteration 5:   (EM) log likelihood = -3164.9872
+Iteration 6:   (EM) log likelihood = -3162.9401
+Iteration 7:   (EM) log likelihood = -3156.4732
+Iteration 8:   (EM) log likelihood = -3141.4849
+Iteration 9:   (EM) log likelihood = -3130.1425
+Iteration 10:  (EM) log likelihood = -3125.7585
+Iteration 11:  (EM) log likelihood =  -3123.156
+Iteration 12:  (EM) log likelihood = -3122.2629
+Iteration 13:  (EM) log likelihood = -3120.3788
+Iteration 14:  (EM) log likelihood = -3118.8293
+Iteration 15:  (EM) log likelihood = -3118.4347
+Iteration 16:  (EM) log likelihood = -3118.2635
+Iteration 17:  (EM) log likelihood = -3118.1308
+Iteration 18:  (EM) log likelihood = -3118.0216
+Iteration 19:  (EM) log likelihood = -3117.9307
+Iteration 20:  (EM) log likelihood = -3117.8535
+note: EM algorithm reached maximum iterations.
+
+Fitting full model:
+
+Iteration 0:   log likelihood = -3103.8586  
+Iteration 1:   log likelihood = -3103.8121  
+Iteration 2:   log likelihood = -3103.8043  
+Iteration 3:   log likelihood = -3103.8043  
+
+Generalized structural equation model                      Number of obs = 127
+Log likelihood = -3103.8043
+
+ ( 1)  [/]var(e.ctrlcrp)#1bn.Class - [/]var(e.ctrlcrp)#5.Class = 0
+ ( 2)  [/]var(e.ctrlcrp)#2.Class - [/]var(e.ctrlcrp)#5.Class = 0
+ ( 3)  [/]var(e.ctrlcrp)#3.Class - [/]var(e.ctrlcrp)#5.Class = 0
+ ( 4)  [/]var(e.ctrlcrp)#4.Class - [/]var(e.ctrlcrp)#5.Class = 0
+ ( 5)  [/]var(e.goveff)#1bn.Class - [/]var(e.goveff)#5.Class = 0
+ ( 6)  [/]var(e.goveff)#2.Class - [/]var(e.goveff)#5.Class = 0
+ ( 7)  [/]var(e.goveff)#3.Class - [/]var(e.goveff)#5.Class = 0
+ ( 8)  [/]var(e.goveff)#4.Class - [/]var(e.goveff)#5.Class = 0
+ ( 9)  [/]var(e.polstab)#1bn.Class - [/]var(e.polstab)#5.Class = 0
+ (10)  [/]var(e.polstab)#2.Class - [/]var(e.polstab)#5.Class = 0
+ (11)  [/]var(e.polstab)#3.Class - [/]var(e.polstab)#5.Class = 0
+ (12)  [/]var(e.polstab)#4.Class - [/]var(e.polstab)#5.Class = 0
+ (13)  [/]var(e.regqual)#1bn.Class - [/]var(e.regqual)#5.Class = 0
+ (14)  [/]var(e.regqual)#2.Class - [/]var(e.regqual)#5.Class = 0
+ (15)  [/]var(e.regqual)#3.Class - [/]var(e.regqual)#5.Class = 0
+ (16)  [/]var(e.regqual)#4.Class - [/]var(e.regqual)#5.Class = 0
+ (17)  [/]var(e.lawrule)#1bn.Class - [/]var(e.lawrule)#5.Class = 0
+ (18)  [/]var(e.lawrule)#2.Class - [/]var(e.lawrule)#5.Class = 0
+ (19)  [/]var(e.lawrule)#3.Class - [/]var(e.lawrule)#5.Class = 0
+ (20)  [/]var(e.lawrule)#4.Class - [/]var(e.lawrule)#5.Class = 0
+ (21)  [/]var(e.voicacc)#1bn.Class - [/]var(e.voicacc)#5.Class = 0
+ (22)  [/]var(e.voicacc)#2.Class - [/]var(e.voicacc)#5.Class = 0
+ (23)  [/]var(e.voicacc)#3.Class - [/]var(e.voicacc)#5.Class = 0
+ (24)  [/]var(e.voicacc)#4.Class - [/]var(e.voicacc)#5.Class = 0
+
+------------------------------------------------------------------------------
+             | Coefficient  Std. err.      z    P>|z|     [95% conf. interval]
+-------------+----------------------------------------------------------------
+1.Class      |  (base outcome)
+-------------+----------------------------------------------------------------
+2.Class      |
+       _cons |   .2236988   .3379105     0.66   0.508    -.4385935    .8859912
+-------------+----------------------------------------------------------------
+3.Class      |
+       _cons |   .4563953   .2965999     1.54   0.124    -.1249298     1.03772
+-------------+----------------------------------------------------------------
+4.Class      |
+       _cons |   .1282376   .3105446     0.41   0.680    -.4804187    .7368938
+-------------+----------------------------------------------------------------
+5.Class      |
+       _cons |  -1.065933   .4305347    -2.48   0.013    -1.909765   -.2221005
+------------------------------------------------------------------------------
+
+Class:    1       
+
+Response: ctrlcrp 
+Family:   Gaussian
+Link:     Identity
+
+Response: goveff  
+Family:   Gaussian
+Link:     Identity
+
+Response: polstab 
+Family:   Gaussian
+Link:     Identity
+
+Response: regqual 
+Family:   Gaussian
+Link:     Identity
+
+Response: lawrule 
+Family:   Gaussian
+Link:     Identity
+
+Response: voicacc 
+Family:   Gaussian
+Link:     Identity
+
+--------------------------------------------------------------------------------
+               | Coefficient  Std. err.      z    P>|z|     [95% conf. interval]
+---------------+----------------------------------------------------------------
+ctrlcrp        |
+         _cons |   11.36118   1.933185     5.88   0.000     7.572209    15.15016
+---------------+----------------------------------------------------------------
+goveff         |
+         _cons |   10.34886   2.021482     5.12   0.000     6.386828    14.31089
+---------------+----------------------------------------------------------------
+polstab        |
+         _cons |   16.45589    3.81863     4.31   0.000     8.971513    23.94027
+---------------+----------------------------------------------------------------
+regqual        |
+         _cons |   13.74787    2.64923     5.19   0.000     8.555471    18.94026
+---------------+----------------------------------------------------------------
+lawrule        |
+         _cons |   8.885605   1.895715     4.69   0.000     5.170071    12.60114
+---------------+----------------------------------------------------------------
+voicacc        |
+         _cons |   16.19887   3.793928     4.27   0.000     8.762905    23.63483
+---------------+----------------------------------------------------------------
+ var(e.ctrlcrp)|   66.60859   10.78694                      48.49335    91.49097
+  var(e.goveff)|   75.84195   10.80346                       57.3665    100.2676
+ var(e.polstab)|    321.291   42.27579                      248.2542    415.8154
+ var(e.regqual)|   132.2763   18.27909                      100.8918    173.4237
+ var(e.lawrule)|    64.5971   8.867329                      49.35913    84.53929
+ var(e.voicacc)|   289.5034   37.18256                      225.0759    372.3731
+--------------------------------------------------------------------------------
+
+Class:    2       
+
+Response: ctrlcrp 
+Family:   Gaussian
+Link:     Identity
+
+Response: goveff  
+Family:   Gaussian
+Link:     Identity
+
+Response: polstab 
+Family:   Gaussian
+Link:     Identity
+
+Response: regqual 
+Family:   Gaussian
+Link:     Identity
+
+Response: lawrule 
+Family:   Gaussian
+Link:     Identity
+
+Response: voicacc 
+Family:   Gaussian
+Link:     Identity
+
+--------------------------------------------------------------------------------
+               | Coefficient  Std. err.      z    P>|z|     [95% conf. interval]
+---------------+----------------------------------------------------------------
+ctrlcrp        |
+         _cons |   27.92277    1.87268    14.91   0.000     24.25238    31.59315
+---------------+----------------------------------------------------------------
+goveff         |
+         _cons |   26.53532   1.965585    13.50   0.000     22.68284    30.38779
+---------------+----------------------------------------------------------------
+polstab        |
+         _cons |   29.76943    3.57526     8.33   0.000     22.76204    36.77681
+---------------+----------------------------------------------------------------
+regqual        |
+         _cons |   28.80833   2.321975    12.41   0.000     24.25735    33.35932
+---------------+----------------------------------------------------------------
+lawrule        |
+         _cons |     26.168   2.008027    13.03   0.000     22.23234    30.10366
+---------------+----------------------------------------------------------------
+voicacc        |
+         _cons |   29.79054   3.316393     8.98   0.000     23.29053    36.29055
+---------------+----------------------------------------------------------------
+ var(e.ctrlcrp)|   66.60859   10.78694                      48.49335    91.49097
+  var(e.goveff)|   75.84195   10.80346                       57.3665    100.2676
+ var(e.polstab)|    321.291   42.27579                      248.2542    415.8154
+ var(e.regqual)|   132.2763   18.27909                      100.8918    173.4237
+ var(e.lawrule)|    64.5971   8.867329                      49.35913    84.53929
+ var(e.voicacc)|   289.5034   37.18256                      225.0759    372.3731
+--------------------------------------------------------------------------------
+
+Class:    3       
+
+Response: ctrlcrp 
+Family:   Gaussian
+Link:     Identity
+
+Response: goveff  
+Family:   Gaussian
+Link:     Identity
+
+Response: polstab 
+Family:   Gaussian
+Link:     Identity
+
+Response: regqual 
+Family:   Gaussian
+Link:     Identity
+
+Response: lawrule 
+Family:   Gaussian
+Link:     Identity
+
+Response: voicacc 
+Family:   Gaussian
+Link:     Identity
+
+--------------------------------------------------------------------------------
+               | Coefficient  Std. err.      z    P>|z|     [95% conf. interval]
+---------------+----------------------------------------------------------------
+ctrlcrp        |
+         _cons |   45.10645   1.503637    30.00   0.000     42.15937    48.05352
+---------------+----------------------------------------------------------------
+goveff         |
+         _cons |   44.46426   1.646223    27.01   0.000     41.23772     47.6908
+---------------+----------------------------------------------------------------
+polstab        |
+         _cons |   48.72175   3.037838    16.04   0.000     42.76769     54.6758
+---------------+----------------------------------------------------------------
+regqual        |
+         _cons |   42.41106   2.015705    21.04   0.000     38.46035    46.36177
+---------------+----------------------------------------------------------------
+lawrule        |
+         _cons |   47.16182   1.476568    31.94   0.000      44.2678    50.05584
+---------------+----------------------------------------------------------------
+voicacc        |
+         _cons |   52.46354   2.890224    18.15   0.000      46.7988    58.12827
+---------------+----------------------------------------------------------------
+ var(e.ctrlcrp)|   66.60859   10.78694                      48.49335    91.49097
+  var(e.goveff)|   75.84195   10.80346                       57.3665    100.2676
+ var(e.polstab)|    321.291   42.27579                      248.2542    415.8154
+ var(e.regqual)|   132.2763   18.27909                      100.8918    173.4237
+ var(e.lawrule)|    64.5971   8.867329                      49.35913    84.53929
+ var(e.voicacc)|   289.5034   37.18256                      225.0759    372.3731
+--------------------------------------------------------------------------------
+
+Class:    4       
+
+Response: ctrlcrp 
+Family:   Gaussian
+Link:     Identity
+
+Response: goveff  
+Family:   Gaussian
+Link:     Identity
+
+Response: polstab 
+Family:   Gaussian
+Link:     Identity
+
+Response: regqual 
+Family:   Gaussian
+Link:     Identity
+
+Response: lawrule 
+Family:   Gaussian
+Link:     Identity
+
+Response: voicacc 
+Family:   Gaussian
+Link:     Identity
+
+--------------------------------------------------------------------------------
+               | Coefficient  Std. err.      z    P>|z|     [95% conf. interval]
+---------------+----------------------------------------------------------------
+ctrlcrp        |
+         _cons |   69.63265   1.892639    36.79   0.000     65.92315    73.34216
+---------------+----------------------------------------------------------------
+goveff         |
+         _cons |   66.46843   1.788897    37.16   0.000     62.96226     69.9746
+---------------+----------------------------------------------------------------
+polstab        |
+         _cons |   67.06713   3.790483    17.69   0.000     59.63792    74.49634
+---------------+----------------------------------------------------------------
+regqual        |
+         _cons |    62.3107   2.452752    25.40   0.000     57.50339      67.118
+---------------+----------------------------------------------------------------
+lawrule        |
+         _cons |   67.04899   1.642303    40.83   0.000     63.83014    70.26785
+---------------+----------------------------------------------------------------
+voicacc        |
+         _cons |   56.20631    3.41407    16.46   0.000     49.51486    62.89777
+---------------+----------------------------------------------------------------
+ var(e.ctrlcrp)|   66.60859   10.78694                      48.49335    91.49097
+  var(e.goveff)|   75.84195   10.80346                       57.3665    100.2676
+ var(e.polstab)|    321.291   42.27579                      248.2542    415.8154
+ var(e.regqual)|   132.2763   18.27909                      100.8918    173.4237
+ var(e.lawrule)|    64.5971   8.867329                      49.35913    84.53929
+ var(e.voicacc)|   289.5034   37.18256                      225.0759    372.3731
+--------------------------------------------------------------------------------
+
+Class:    5       
+
+Response: ctrlcrp 
+Family:   Gaussian
+Link:     Identity
+
+Response: goveff  
+Family:   Gaussian
+Link:     Identity
+
+Response: polstab 
+Family:   Gaussian
+Link:     Identity
+
+Response: regqual 
+Family:   Gaussian
+Link:     Identity
+
+Response: lawrule 
+Family:   Gaussian
+Link:     Identity
+
+Response: voicacc 
+Family:   Gaussian
+Link:     Identity
+
+--------------------------------------------------------------------------------
+               | Coefficient  Std. err.      z    P>|z|     [95% conf. interval]
+---------------+----------------------------------------------------------------
+ctrlcrp        |
+         _cons |   92.65449   2.984109    31.05   0.000     86.80574    98.50323
+---------------+----------------------------------------------------------------
+goveff         |
+         _cons |   91.67613   3.119195    29.39   0.000     85.56262    97.78963
+---------------+----------------------------------------------------------------
+polstab        |
+         _cons |   80.03427   8.602276     9.30   0.000     63.17412    96.89442
+---------------+----------------------------------------------------------------
+regqual        |
+         _cons |   91.17811   4.105865    22.21   0.000     83.13076    99.22546
+---------------+----------------------------------------------------------------
+lawrule        |
+         _cons |   90.83294   3.029055    29.99   0.000      84.8961    96.76978
+---------------+----------------------------------------------------------------
+voicacc        |
+         _cons |   83.81248   6.093229    13.76   0.000     71.86997    95.75499
+---------------+----------------------------------------------------------------
+ var(e.ctrlcrp)|   66.60859   10.78694                      48.49335    91.49097
+  var(e.goveff)|   75.84195   10.80346                       57.3665    100.2676
+ var(e.polstab)|    321.291   42.27579                      248.2542    415.8154
+ var(e.regqual)|   132.2763   18.27909                      100.8918    173.4237
+ var(e.lawrule)|    64.5971   8.867329                      49.35913    84.53929
+ var(e.voicacc)|   289.5034   37.18256                      225.0759    372.3731
+--------------------------------------------------------------------------------
+
+Akaike's information criterion and Bayesian information criterion
+
+-----------------------------------------------------------------------------
+       Model |          N   ll(null)  ll(model)      df        AIC        BIC
+-------------+---------------------------------------------------------------
+      model5 |        127          .  -3103.804      40   6287.609   6401.376
+-----------------------------------------------------------------------------
+Note: BIC uses N = number of observations. See [R] BIC note.
+
+. 
+. e'b
+'b invalid name
+r(198);
+
+. 
+. estimates stat model1 model2 model3 model4 model5
+
+Akaike's information criterion and Bayesian information criterion
+
+-----------------------------------------------------------------------------
+       Model |          N   ll(null)  ll(model)      df        AIC        BIC
+-------------+---------------------------------------------------------------
+      model1 |        127          .  -3536.337      12   7096.675   7130.805
+      model2 |        127          .  -3309.412      19   6656.824   6710.864
+      model3 |        127          .   -3197.35      26     6446.7   6520.649
+      model4 |        127          .  -3166.483      33   6398.965   6492.824
+      model5 |        127          .  -3103.804      40   6287.609   6401.376
+-----------------------------------------------------------------------------
+Note: BIC uses N = number of observations. See [R] BIC note.
+
+. 
+. 
+. 
+. gsem (ctrlcrp goveff polstab regqual lawrule voicacc <- ), lclass(C 2)
+
+Fitting class model:
+
+Iteration 0:   (class) log likelihood = -88.025755  
+Iteration 1:   (class) log likelihood = -88.025755  
+
+Fitting outcome model:
+
+Iteration 0:   (outcome) log likelihood = -3227.9275  
+Iteration 1:   (outcome) log likelihood = -3227.9265  
+Iteration 2:   (outcome) log likelihood = -3227.9265  
+
+Refining starting values:
+
+Iteration 0:   (EM) log likelihood = -3318.7556
+Iteration 1:   (EM) log likelihood = -3318.1023
+Iteration 2:   (EM) log likelihood = -3317.7083
+Iteration 3:   (EM) log likelihood = -3317.5338
+Iteration 4:   (EM) log likelihood = -3317.4641
+Iteration 5:   (EM) log likelihood = -3317.4392
+Iteration 6:   (EM) log likelihood = -3317.4325
+Iteration 7:   (EM) log likelihood = -3317.4326
+
+Fitting full model:
+
+Iteration 0:   log likelihood = -3309.4175  
+Iteration 1:   log likelihood = -3309.4121  
+Iteration 2:   log likelihood = -3309.4121  
+
+Generalized structural equation model                      Number of obs = 127
+Log likelihood = -3309.4121
+
+ ( 1)  [/]var(e.ctrlcrp)#1bn.C - [/]var(e.ctrlcrp)#2.C = 0
+ ( 2)  [/]var(e.goveff)#1bn.C - [/]var(e.goveff)#2.C = 0
+ ( 3)  [/]var(e.polstab)#1bn.C - [/]var(e.polstab)#2.C = 0
+ ( 4)  [/]var(e.regqual)#1bn.C - [/]var(e.regqual)#2.C = 0
+ ( 5)  [/]var(e.lawrule)#1bn.C - [/]var(e.lawrule)#2.C = 0
+ ( 6)  [/]var(e.voicacc)#1bn.C - [/]var(e.voicacc)#2.C = 0
+
+------------------------------------------------------------------------------
+             | Coefficient  Std. err.      z    P>|z|     [95% conf. interval]
+-------------+----------------------------------------------------------------
+1.C          |  (base outcome)
+-------------+----------------------------------------------------------------
+2.C          |
+       _cons |  -.1971127   .2005104    -0.98   0.326    -.5901059    .1958806
+------------------------------------------------------------------------------
+
+Class:    1       
+
+Response: ctrlcrp 
+Family:   Gaussian
+Link:     Identity
+
+Response: goveff  
+Family:   Gaussian
+Link:     Identity
+
+Response: polstab 
+Family:   Gaussian
+Link:     Identity
+
+Response: regqual 
+Family:   Gaussian
+Link:     Identity
+
+Response: lawrule 
+Family:   Gaussian
+Link:     Identity
+
+Response: voicacc 
+Family:   Gaussian
+Link:     Identity
+
+--------------------------------------------------------------------------------
+               | Coefficient  Std. err.      z    P>|z|     [95% conf. interval]
+---------------+----------------------------------------------------------------
+ctrlcrp        |
+         _cons |   25.06265    1.97262    12.71   0.000     21.19639    28.92891
+---------------+----------------------------------------------------------------
+goveff         |
+         _cons |    24.1156   2.028068    11.89   0.000     20.14066    28.09054
+---------------+----------------------------------------------------------------
+polstab        |
+         _cons |   27.45773   2.520119    10.90   0.000     22.51839    32.39707
+---------------+----------------------------------------------------------------
+regqual        |
+         _cons |   26.57642   2.206162    12.05   0.000     22.25242    30.90041
+---------------+----------------------------------------------------------------
+lawrule        |
+         _cons |    23.6453   1.939798    12.19   0.000     19.84337    27.44723
+---------------+----------------------------------------------------------------
+voicacc        |
+         _cons |   28.32803   2.577934    10.99   0.000     23.27538    33.38069
+---------------+----------------------------------------------------------------
+ var(e.ctrlcrp)|    228.168   30.20946                      176.0174    295.7699
+  var(e.goveff)|   238.7955   32.59652                        182.74    312.0459
+ var(e.polstab)|   377.6469   53.18724                      286.5523    497.7003
+ var(e.regqual)|   306.5934   40.06047                      237.3242    396.0806
+ var(e.lawrule)|   212.2797   27.55081                       164.602    273.7676
+ var(e.voicacc)|   371.0395   50.66287                      283.9191    484.8929
+--------------------------------------------------------------------------------
+
+Class:    2       
+
+Response: ctrlcrp 
+Family:   Gaussian
+Link:     Identity
+
+Response: goveff  
+Family:   Gaussian
+Link:     Identity
+
+Response: polstab 
+Family:   Gaussian
+Link:     Identity
+
+Response: regqual 
+Family:   Gaussian
+Link:     Identity
+
+Response: lawrule 
+Family:   Gaussian
+Link:     Identity
+
+Response: voicacc 
+Family:   Gaussian
+Link:     Identity
+
+--------------------------------------------------------------------------------
+               | Coefficient  Std. err.      z    P>|z|     [95% conf. interval]
+---------------+----------------------------------------------------------------
+ctrlcrp        |
+         _cons |   64.93197   2.285345    28.41   0.000     60.45277    69.41116
+---------------+----------------------------------------------------------------
+goveff         |
+         _cons |   62.87135   2.306597    27.26   0.000     58.35051     67.3922
+---------------+----------------------------------------------------------------
+polstab        |
+         _cons |   64.45733    2.82638    22.81   0.000     58.91772    69.99693
+---------------+----------------------------------------------------------------
+regqual        |
+         _cons |   59.08208   2.506826    23.57   0.000     54.16879    63.99537
+---------------+----------------------------------------------------------------
+lawrule        |
+         _cons |   64.57376   2.198928    29.37   0.000     60.26394    68.88358
+---------------+----------------------------------------------------------------
+voicacc        |
+         _cons |   61.15447   2.605552    23.47   0.000     56.04768    66.26125
+---------------+----------------------------------------------------------------
+ var(e.ctrlcrp)|    228.168   30.20946                      176.0174    295.7699
+  var(e.goveff)|   238.7955   32.59652                        182.74    312.0459
+ var(e.polstab)|   377.6469   53.18724                      286.5523    497.7003
+ var(e.regqual)|   306.5934   40.06047                      237.3242    396.0806
+ var(e.lawrule)|   212.2797   27.55081                       164.602    273.7676
+ var(e.voicacc)|   371.0395   50.66287                      283.9191    484.8929
+--------------------------------------------------------------------------------
+
+. 
+. estat lcprob
+
+Latent class marginal probabilities                        Number of obs = 127
+
+--------------------------------------------------------------
+             |            Delta-method
+             |     Margin   std. err.     [95% conf. interval]
+-------------+------------------------------------------------
+           C |
+          1  |   .5491192   .0496438      .4511858    .6433895
+          2  |   .4508808   .0496438      .3566105    .5488142
+--------------------------------------------------------------
+
+. 
+. estat lcmean
+
+Latent class marginal means                                Number of obs = 127
+
+------------------------------------------------------------------------------
+             |            Delta-method
+             |     Margin   std. err.      z    P>|z|     [95% conf. interval]
+-------------+----------------------------------------------------------------
+1            |
+     ctrlcrp |   25.06265    1.97262    12.71   0.000     21.19639    28.92891
+      goveff |    24.1156   2.028068    11.89   0.000     20.14066    28.09054
+     polstab |   27.45773   2.520119    10.90   0.000     22.51839    32.39707
+     regqual |   26.57642   2.206162    12.05   0.000     22.25242    30.90041
+     lawrule |    23.6453   1.939798    12.19   0.000     19.84337    27.44723
+     voicacc |   28.32803   2.577934    10.99   0.000     23.27538    33.38069
+-------------+----------------------------------------------------------------
+2            |
+     ctrlcrp |   64.93197   2.285345    28.41   0.000     60.45277    69.41116
+      goveff |   62.87135   2.306597    27.26   0.000     58.35051     67.3922
+     polstab |   64.45733    2.82638    22.81   0.000     58.91772    69.99693
+     regqual |   59.08208   2.506826    23.57   0.000     54.16879    63.99537
+     lawrule |   64.57376   2.198928    29.37   0.000     60.26394    68.88358
+     voicacc |   61.15447   2.605552    23.47   0.000     56.04768    66.26125
+------------------------------------------------------------------------------
+
+. 
+. 
+. 
+. predict cpost*, classposterior
+
+. 
+. 
+. 
+. egen max = rowmax(cpost*)
+
+. 
+. gen predclass = . 
+(127 missing values generated)
+
+. 
+. replace predclass = 0 if cpost1 == max
+(69 real changes made)
+
+. 
+. replace predclass = 1 if cpost2 == max
+(58 real changes made)
+
+. 
+. 
+. 
+. mlogit predclass i.lastcol ib4.freesince, rrr
+
+Iteration 0:   log likelihood = -87.552717  
+Iteration 1:   log likelihood = -72.507159  
+Iteration 2:   log likelihood = -72.360706  
+Iteration 3:   log likelihood = -72.360549  
+Iteration 4:   log likelihood = -72.360549  
+
+Multinomial logistic regression                         Number of obs =    127
+                                                        LR chi2(7)    =  30.38
+                                                        Prob > chi2   = 0.0001
+Log likelihood = -72.360549                             Pseudo R2     = 0.1735
+
+----------------------------------------------------------------------------------------------
+                   predclass |        RRR   Std. err.      z    P>|z|     [95% conf. interval]
+-----------------------------+----------------------------------------------------------------
+0                            |  (base outcome)
+-----------------------------+----------------------------------------------------------------
+1                            |
+                     lastcol |
+                     france  |    .145072   .0933884    -3.00   0.003     .0410802    .5123124
+                      spain  |    .119806   .1031226    -2.47   0.014     .0221723    .6473622
+                   portugal  |    .080539   .0784052    -2.59   0.010     .0119497      .54282
+other (IT, GE, NT), replace  |   .4536204   .3958562    -0.91   0.365     .0820132    2.509006
+                             |
+                   freesince |
+                 since 1970  |   .7539483   .6814582    -0.31   0.755     .1282274    4.433047
+                 since 1945  |   .1340368   .1234929    -2.18   0.029     .0220283    .8155793
+                 since 1880  |   .5312493   .5087466    -0.66   0.509     .0813115     3.47092
+                             |
+                       _cons |   6.314178   5.681216     2.05   0.041     1.082539    36.82901
+----------------------------------------------------------------------------------------------
+Note: _cons estimates baseline relative risk for each outcome.
+
+. 
+. 
+. 
+. gsem (ctrlcrp goveff polstab regqual lawrule voicacc <- ) (C <- i.lastcol i.freesince), lclass(C 2)
+
+Fitting class model:
+
+Iteration 0:   (class) log likelihood = -88.025755  
+Iteration 1:   (class) log likelihood = -67.027186  
+Iteration 2:   (class) log likelihood =  -66.86933  
+Iteration 3:   (class) log likelihood = -66.869014  
+Iteration 4:   (class) log likelihood = -66.869014  
+
+Fitting outcome model:
+
+Iteration 0:   (outcome) log likelihood = -3240.1038  
+Iteration 1:   (outcome) log likelihood = -3240.1027  
+Iteration 2:   (outcome) log likelihood = -3240.1027  
+
+Refining starting values:
+
+Iteration 0:   (EM) log likelihood = -3304.5191
+Iteration 1:   (EM) log likelihood = -3302.3615
+Iteration 2:   (EM) log likelihood = -3301.2291
+Iteration 3:   (EM) log likelihood = -3300.7919
+Iteration 4:   (EM) log likelihood = -3300.6443
+Iteration 5:   (EM) log likelihood = -3300.6005
+Iteration 6:   (EM) log likelihood =  -3300.592
+Iteration 7:   (EM) log likelihood = -3300.5945
+
+Fitting full model:
+
+Iteration 0:   log likelihood = -3293.5445  
+Iteration 1:   log likelihood = -3293.5399  
+Iteration 2:   log likelihood = -3293.5399  
+
+Generalized structural equation model                      Number of obs = 127
+Log likelihood = -3293.5399
+
+ ( 1)  [/]var(e.ctrlcrp)#1bn.C - [/]var(e.ctrlcrp)#2.C = 0
+ ( 2)  [/]var(e.goveff)#1bn.C - [/]var(e.goveff)#2.C = 0
+ ( 3)  [/]var(e.polstab)#1bn.C - [/]var(e.polstab)#2.C = 0
+ ( 4)  [/]var(e.regqual)#1bn.C - [/]var(e.regqual)#2.C = 0
+ ( 5)  [/]var(e.lawrule)#1bn.C - [/]var(e.lawrule)#2.C = 0
+ ( 6)  [/]var(e.voicacc)#1bn.C - [/]var(e.voicacc)#2.C = 0
+
+----------------------------------------------------------------------------------------------
+                             | Coefficient  Std. err.      z    P>|z|     [95% conf. interval]
+-----------------------------+----------------------------------------------------------------
+1.C                          |  (base outcome)
+-----------------------------+----------------------------------------------------------------
+2.C                          |
+                     lastcol |
+                     france  |   -2.18755   .7329778    -2.98   0.003     -3.62416   -.7509395
+                      spain  |  -2.306664   .9240368    -2.50   0.013    -4.117742   -.4955847
+                   portugal  |  -2.598874   1.000651    -2.60   0.009    -4.560115   -.6376337
+other (IT, GE, NT), replace  |  -.9252358   .9757697    -0.95   0.343    -2.837709    .9872377
+                             |
+                   freesince |
+                 since 1945  |  -1.920978   .6245397    -3.08   0.002    -3.145053   -.6969026
+                 since 1880  |  -.4482298   .8452298    -0.53   0.596     -2.10485     1.20839
+              prior to 1880  |     .11217   .9642476     0.12   0.907    -1.777721    2.002061
+                             |
+                       _cons |   1.667127   .5678023     2.94   0.003     .5542546    2.779999
+----------------------------------------------------------------------------------------------
+
+Class:    1       
+
+Response: ctrlcrp 
+Family:   Gaussian
+Link:     Identity
+
+Response: goveff  
+Family:   Gaussian
+Link:     Identity
+
+Response: polstab 
+Family:   Gaussian
+Link:     Identity
+
+Response: regqual 
+Family:   Gaussian
+Link:     Identity
+
+Response: lawrule 
+Family:   Gaussian
+Link:     Identity
+
+Response: voicacc 
+Family:   Gaussian
+Link:     Identity
+
+--------------------------------------------------------------------------------
+               | Coefficient  Std. err.      z    P>|z|     [95% conf. interval]
+---------------+----------------------------------------------------------------
+ctrlcrp        |
+         _cons |   25.70191   1.917779    13.40   0.000     21.94314    29.46069
+---------------+----------------------------------------------------------------
+goveff         |
+         _cons |   24.82391   2.015962    12.31   0.000     20.87269    28.77512
+---------------+----------------------------------------------------------------
+polstab        |
+         _cons |   27.57063   2.380898    11.58   0.000     22.90415     32.2371
+---------------+----------------------------------------------------------------
+regqual        |
+         _cons |   27.20096   2.189629    12.42   0.000     22.90937    31.49255
+---------------+----------------------------------------------------------------
+lawrule        |
+         _cons |   24.12544   1.877439    12.85   0.000     20.44572    27.80515
+---------------+----------------------------------------------------------------
+voicacc        |
+         _cons |   28.91547   2.461504    11.75   0.000     24.09101    33.73993
+---------------+----------------------------------------------------------------
+ var(e.ctrlcrp)|   232.0709   30.82418                      178.8801    301.0781
+  var(e.goveff)|   246.2705   33.69788                      188.3389    322.0213
+ var(e.polstab)|   360.6711   52.74417                        270.79    480.3859
+ var(e.regqual)|   312.9614   41.39649                      241.4901    405.5853
+ var(e.lawrule)|    208.226   27.47001                      160.7833    269.6677
+ var(e.voicacc)|   375.9415   49.98195                      289.7023    487.8527
+--------------------------------------------------------------------------------
+
+Class:    2       
+
+Response: ctrlcrp 
+Family:   Gaussian
+Link:     Identity
+
+Response: goveff  
+Family:   Gaussian
+Link:     Identity
+
+Response: polstab 
+Family:   Gaussian
+Link:     Identity
+
+Response: regqual 
+Family:   Gaussian
+Link:     Identity
+
+Response: lawrule 
+Family:   Gaussian
+Link:     Identity
+
+Response: voicacc 
+Family:   Gaussian
+Link:     Identity
+
+--------------------------------------------------------------------------------
+               | Coefficient  Std. err.      z    P>|z|     [95% conf. interval]
+---------------+----------------------------------------------------------------
+ctrlcrp        |
+         _cons |   65.51411   2.289385    28.62   0.000     61.02699    70.00122
+---------------+----------------------------------------------------------------
+goveff         |
+         _cons |   63.32458   2.286559    27.69   0.000     58.84301    67.80616
+---------------+----------------------------------------------------------------
+polstab        |
+         _cons |   65.62028   2.874257    22.83   0.000     59.98684    71.25372
+---------------+----------------------------------------------------------------
+regqual        |
+         _cons |   59.42273   2.535955    23.43   0.000     54.45235    64.39311
+---------------+----------------------------------------------------------------
+lawrule        |
+         _cons |   65.39966   2.137955    30.59   0.000     61.20935    69.58998
+---------------+----------------------------------------------------------------
+voicacc        |
+         _cons |   61.55457   2.681081    22.96   0.000     56.29975    66.80939
+---------------+----------------------------------------------------------------
+ var(e.ctrlcrp)|   232.0709   30.82418                      178.8801    301.0781
+  var(e.goveff)|   246.2705   33.69788                      188.3389    322.0213
+ var(e.polstab)|   360.6711   52.74417                        270.79    480.3859
+ var(e.regqual)|   312.9614   41.39649                      241.4901    405.5853
+ var(e.lawrule)|    208.226   27.47001                      160.7833    269.6677
+ var(e.voicacc)|   375.9415   49.98195                      289.7023    487.8527
+--------------------------------------------------------------------------------
+
+. 
+. estat lcprob
+
+Latent class marginal probabilities                        Number of obs = 127
+
+--------------------------------------------------------------
+             |            Delta-method
+             |     Margin   std. err.     [95% conf. interval]
+-------------+------------------------------------------------
+           C |
+          1  |   .5645293    .042939      .4793186    .6460914
+          2  |   .4354707    .042939      .3539086    .5206814
+--------------------------------------------------------------
+
+. 
+. estat lcmean
+
+Latent class marginal means                                Number of obs = 127
+
+------------------------------------------------------------------------------
+             |            Delta-method
+             |     Margin   std. err.      z    P>|z|     [95% conf. interval]
+-------------+----------------------------------------------------------------
+1            |
+     ctrlcrp |   25.70191   1.917779    13.40   0.000     21.94314    29.46069
+      goveff |   24.82391   2.015962    12.31   0.000     20.87269    28.77512
+     polstab |   27.57063   2.380898    11.58   0.000     22.90415     32.2371
+     regqual |   27.20096   2.189629    12.42   0.000     22.90937    31.49255
+     lawrule |   24.12544   1.877439    12.85   0.000     20.44572    27.80515
+     voicacc |   28.91547   2.461504    11.75   0.000     24.09101    33.73993
+-------------+----------------------------------------------------------------
+2            |
+     ctrlcrp |   65.51411   2.289385    28.62   0.000     61.02699    70.00122
+      goveff |   63.32458   2.286559    27.69   0.000     58.84301    67.80616
+     polstab |   65.62028   2.874257    22.83   0.000     59.98684    71.25372
+     regqual |   59.42273   2.535955    23.43   0.000     54.45235    64.39311
+     lawrule |   65.39966   2.137955    30.59   0.000     61.20935    69.58998
+     voicacc |   61.55457   2.681081    22.96   0.000     56.29975    66.80939
+------------------------------------------------------------------------------
+
+. 
+. 
+. 
+. gsem (ctrlcrp goveff polstab regqual lawrule voicacc <- i.lastcol i.freesince), lclass(C 2)
+
+Fitting class model:
+
+Iteration 0:   (class) log likelihood = -88.025755  
+Iteration 1:   (class) log likelihood = -88.025755  
+
+Fitting outcome model:
+
+Iteration 0:   (outcome) log likelihood = -3155.9319  
+Iteration 1:   (outcome) log likelihood = -3155.9311  
+Iteration 2:   (outcome) log likelihood = -3155.9311  
+
+Refining starting values:
+
+Iteration 0:   (EM) log likelihood = -3207.5527
+Iteration 1:   (EM) log likelihood = -3189.7682
+Iteration 2:   (EM) log likelihood = -3183.5425
+Iteration 3:   (EM) log likelihood = -3181.5799
+Iteration 4:   (EM) log likelihood = -3180.9271
+Iteration 5:   (EM) log likelihood = -3180.3822
+Iteration 6:   (EM) log likelihood = -3179.8524
+Iteration 7:   (EM) log likelihood = -3179.5248
+Iteration 8:   (EM) log likelihood = -3179.3983
+Iteration 9:   (EM) log likelihood = -3179.3628
+Iteration 10:  (EM) log likelihood = -3179.3551
+Iteration 11:  (EM) log likelihood = -3179.3544
+
+Fitting full model:
+
+Iteration 0:   log likelihood = -3176.4666  
+Iteration 1:   log likelihood = -3176.4663  
+
+Generalized structural equation model                      Number of obs = 127
+Log likelihood = -3176.4663
+
+ ( 1)  [/]var(e.ctrlcrp)#1bn.C - [/]var(e.ctrlcrp)#2.C = 0
+ ( 2)  [/]var(e.goveff)#1bn.C - [/]var(e.goveff)#2.C = 0
+ ( 3)  [/]var(e.polstab)#1bn.C - [/]var(e.polstab)#2.C = 0
+ ( 4)  [/]var(e.regqual)#1bn.C - [/]var(e.regqual)#2.C = 0
+ ( 5)  [/]var(e.lawrule)#1bn.C - [/]var(e.lawrule)#2.C = 0
+ ( 6)  [/]var(e.voicacc)#1bn.C - [/]var(e.voicacc)#2.C = 0
+
+------------------------------------------------------------------------------
+             | Coefficient  Std. err.      z    P>|z|     [95% conf. interval]
+-------------+----------------------------------------------------------------
+1.C          |  (base outcome)
+-------------+----------------------------------------------------------------
+2.C          |
+       _cons |   .1037938    .181383     0.57   0.567    -.2517103    .4592979
+------------------------------------------------------------------------------
+
+Class:    1       
+
+Response: ctrlcrp 
+Family:   Gaussian
+Link:     Identity
+
+Response: goveff  
+Family:   Gaussian
+Link:     Identity
+
+Response: polstab 
+Family:   Gaussian
+Link:     Identity
+
+Response: regqual 
+Family:   Gaussian
+Link:     Identity
+
+Response: lawrule 
+Family:   Gaussian
+Link:     Identity
+
+Response: voicacc 
+Family:   Gaussian
+Link:     Identity
+
+----------------------------------------------------------------------------------------------
+                             | Coefficient  Std. err.      z    P>|z|     [95% conf. interval]
+-----------------------------+----------------------------------------------------------------
+ctrlcrp                      |
+                     lastcol |
+                     france  |  -2.589651    4.55867    -0.57   0.570    -11.52448    6.345178
+                      spain  |   11.21288   8.367951     1.34   0.180    -5.188002    27.61377
+                   portugal  |   -14.5541    9.57769    -1.52   0.129    -33.32602    4.217831
+other (IT, GE, NT), replace  |  -1.745774   7.345989    -0.24   0.812    -16.14365     12.6521
+                             |
+                   freesince |
+                 since 1945  |  -9.850087   6.017047    -1.64   0.102    -21.64328    1.943109
+                 since 1880  |  -3.797715   8.893845    -0.43   0.669    -21.22933     13.6339
+              prior to 1880  |   -10.5113   9.921692    -1.06   0.289    -29.95746    8.934855
+                             |
+                       _cons |   30.29111   5.718949     5.30   0.000     19.08217    41.50004
+-----------------------------+----------------------------------------------------------------
+goveff                       |
+                     lastcol |
+                     france  |  -8.013072   4.508662    -1.78   0.076    -16.84989    .8237434
+                      spain  |   4.622282   8.523975     0.54   0.588     -12.0844    21.32897
+                   portugal  |  -13.53336   9.482424    -1.43   0.154    -32.11857    5.051844
+other (IT, GE, NT), replace  |  -3.449906   7.353415    -0.47   0.639    -17.86233    10.96252
+                             |
+                   freesince |
+                 since 1945  |  -3.857795    6.01909    -0.64   0.522      -15.655    7.939405
+                 since 1880  |  -.4968246   8.876878    -0.06   0.955    -17.89519    16.90154
+              prior to 1880  |   4.957723   10.18301     0.49   0.626    -15.00061    24.91606
+                             |
+                       _cons |   25.10815   5.711049     4.40   0.000      13.9147     36.3016
+-----------------------------+----------------------------------------------------------------
+polstab                      |
+                     lastcol |
+                     france  |  -2.729982   5.571324    -0.49   0.624    -13.64958    8.189612
+                      spain  |   16.33883   10.53007     1.55   0.121    -4.299725    36.97738
+                   portugal  |  -20.17439   11.69478    -1.73   0.085    -43.09574     2.74696
+other (IT, GE, NT), replace  |  -13.85364   8.950909    -1.55   0.122     -31.3971    3.689819
+                             |
+                   freesince |
+                 since 1945  |  -21.26242   7.383282    -2.88   0.004    -35.73339   -6.791458
+                 since 1880  |  -24.57778   10.94014    -2.25   0.025    -46.02006   -3.135495
+              prior to 1880  |  -32.35486   12.57127    -2.57   0.010     -56.9941   -7.715621
+                             |
+                       _cons |   44.23764   6.992223     6.33   0.000     30.53313    57.94214
+-----------------------------+----------------------------------------------------------------
+regqual                      |
+                     lastcol |
+                     france  |  -4.986662   4.822212    -1.03   0.301    -14.43802      4.4647
+                      spain  |  -1.768677   9.579883    -0.18   0.854     -20.5449    17.00755
+                   portugal  |  -7.498992   10.21969    -0.73   0.463    -27.52921    12.53123
+other (IT, GE, NT), replace  |  -5.874091   7.857749    -0.75   0.455      -21.275    9.526814
+                             |
+                   freesince |
+                 since 1945  |   4.754367   6.549375     0.73   0.468    -8.082173    17.59091
+                 since 1880  |   .6059595   9.689877     0.06   0.950    -18.38585    19.59777
+              prior to 1880  |   23.35675   11.53108     2.03   0.043     .7562466    45.95725
+                             |
+                       _cons |   19.36205   6.192175     3.13   0.002     7.225615    31.49849
+-----------------------------+----------------------------------------------------------------
+lawrule                      |
+                     lastcol |
+                     france  |  -8.170323   4.248142    -1.92   0.054    -16.49653    .1558826
+                      spain  |  -2.072365   7.754721    -0.27   0.789    -17.27134    13.12661
+                   portugal  |  -21.77715   8.871363    -2.45   0.014     -39.1647   -4.389596
+other (IT, GE, NT), replace  |  -8.963801   6.857054    -1.31   0.191    -22.40338    4.475779
+                             |
+                   freesince |
+                 since 1945  |  -8.827437   5.562196    -1.59   0.113    -19.72914    2.074266
+                 since 1880  |  -8.049453   8.231669    -0.98   0.328    -24.18323    8.084322
+              prior to 1880  |  -3.984081   9.170415    -0.43   0.664    -21.95776     13.9896
+                             |
+                       _cons |   31.79006   5.279195     6.02   0.000     21.44303     42.1371
+-----------------------------+----------------------------------------------------------------
+voicacc                      |
+                     lastcol |
+                     france  |  -7.649134    5.26195    -1.45   0.146    -17.96237    2.664099
+                      spain  |  -6.727756   9.639212    -0.70   0.485    -25.62026    12.16475
+                   portugal  |  -9.228127   10.97906    -0.84   0.401     -30.7467    12.29044
+other (IT, GE, NT), replace  |  -5.186474   8.540374    -0.61   0.544     -21.9253    11.55235
+                             |
+                   freesince |
+                 since 1945  |   -16.6397    6.86346    -2.42   0.015    -30.09184   -3.187567
+                 since 1880  |  -17.49258   10.18971    -1.72   0.086    -37.46405    2.478879
+              prior to 1880  |   11.22058   11.38372     0.99   0.324     -11.0911    33.53227
+                             |
+                       _cons |   38.47684   6.496644     5.92   0.000     25.74365    51.21003
+-----------------------------+----------------------------------------------------------------
+               var(e.ctrlcrp)|   176.6917   22.25354                       138.042    226.1628
+                var(e.goveff)|   171.1318     21.847                      133.2492    219.7843
+               var(e.polstab)|     263.01   33.37319                      205.0991    337.2724
+               var(e.regqual)|   197.8379   25.13719                      154.2255    253.7831
+               var(e.lawrule)|   152.1884   19.31347                      118.6752    195.1656
+               var(e.voicacc)|   234.1932   29.75627                      182.5668    300.4186
+----------------------------------------------------------------------------------------------
+
+Class:    2       
+
+Response: ctrlcrp 
+Family:   Gaussian
+Link:     Identity
+
+Response: goveff  
+Family:   Gaussian
+Link:     Identity
+
+Response: polstab 
+Family:   Gaussian
+Link:     Identity
+
+Response: regqual 
+Family:   Gaussian
+Link:     Identity
+
+Response: lawrule 
+Family:   Gaussian
+Link:     Identity
+
+Response: voicacc 
+Family:   Gaussian
+Link:     Identity
+
+----------------------------------------------------------------------------------------------
+                             | Coefficient  Std. err.      z    P>|z|     [95% conf. interval]
+-----------------------------+----------------------------------------------------------------
+ctrlcrp                      |
+                     lastcol |
+                     france  |  -21.18134   4.946706    -4.28   0.000     -30.8767   -11.48597
+                      spain  |  -26.15606    6.43659    -4.06   0.000    -38.77154   -13.54057
+                   portugal  |  -29.22224   7.425147    -3.94   0.000    -43.77526   -14.66922
+other (IT, GE, NT), replace  |  -28.43354   8.479538    -3.35   0.001    -45.05313   -11.81396
+                             |
+                   freesince |
+                 since 1945  |  -8.571641   4.343728    -1.97   0.048    -17.08519    -.058091
+                 since 1880  |   3.300253   5.372584     0.61   0.539    -7.229818    13.83032
+              prior to 1880  |    19.7993   7.215685     2.74   0.006     5.656821    33.94179
+                             |
+                       _cons |    71.7678   3.178284    22.58   0.000     65.53848    77.99713
+-----------------------------+----------------------------------------------------------------
+goveff                       |
+                     lastcol |
+                     france  |  -20.75661   4.861202    -4.27   0.000    -30.28439   -11.22883
+                      spain  |  -22.41313   6.293861    -3.56   0.000    -34.74887   -10.07739
+                   portugal  |  -25.33443     7.3043    -3.47   0.001    -39.65059   -11.01826
+other (IT, GE, NT), replace  |  -35.16138   8.294277    -4.24   0.000    -51.41787    -18.9049
+                             |
+                   freesince |
+                 since 1945  |   -1.76852    4.26019    -0.42   0.678    -10.11834    6.581298
+                 since 1880  |   9.748332   5.281967     1.85   0.065     -.604133     20.1008
+              prior to 1880  |   24.01821   6.975112     3.44   0.001     10.34724    37.68917
+                             |
+                       _cons |   65.25797   3.125137    20.88   0.000     59.13281    71.38313
+-----------------------------+----------------------------------------------------------------
+polstab                      |
+                     lastcol |
+                     france  |  -6.347737   6.026158    -1.05   0.292    -18.15879    5.463315
+                      spain  |  -24.39028   7.888242    -3.09   0.002    -39.85095   -8.929606
+                   portugal  |  -17.90178   9.060117    -1.98   0.048    -35.65928   -.1442765
+other (IT, GE, NT), replace  |   .3789531   11.01386     0.03   0.973    -21.20781    21.96572
+                             |
+                   freesince |
+                 since 1945  |  -24.15245   5.313064    -4.55   0.000    -34.56587   -13.73904
+                 since 1880  |   1.784542   6.590173     0.27   0.787    -11.13196    14.70104
+              prior to 1880  |   1.482196   8.698948     0.17   0.865    -15.56743    18.53182
+                             |
+                       _cons |   76.51762   3.880262    19.72   0.000     68.91245    84.12279
+-----------------------------+----------------------------------------------------------------
+regqual                      |
+                     lastcol |
+                     france  |  -17.18026   5.221914    -3.29   0.001    -27.41503   -6.945498
+                      spain  |  -20.13063   6.773259    -2.97   0.003    -33.40598   -6.855288
+                   portugal  |  -28.06309   7.856859    -3.57   0.000    -43.46225   -12.66392
+other (IT, GE, NT), replace  |  -42.12999   9.069238    -4.65   0.000    -59.90537   -24.35461
+                             |
+                   freesince |
+                 since 1945  |  -1.302038   4.590683    -0.28   0.777    -10.29961    7.695536
+                 since 1880  |   10.88112   5.689248     1.91   0.056    -.2695977    22.03184
+              prior to 1880  |   30.41161   7.510079     4.05   0.000     15.69213    45.13109
+                             |
+                       _cons |   60.86362   3.371661    18.05   0.000     54.25529    67.47195
+-----------------------------+----------------------------------------------------------------
+lawrule                      |
+                     lastcol |
+                     france  |  -18.50837   4.586303    -4.04   0.000    -27.49736   -9.519379
+                      spain  |  -26.10645    6.07046    -4.30   0.000    -38.00433   -14.20857
+                   portugal  |  -30.29603   6.903179    -4.39   0.000    -43.82601   -16.76605
+other (IT, GE, NT), replace  |  -21.01969   7.923626    -2.65   0.008    -36.54971   -5.489664
+                             |
+                   freesince |
+                 since 1945  |  -7.793166   4.034512    -1.93   0.053    -15.70066    .1143324
+                 since 1880  |   8.871014   5.002534     1.77   0.076    -.9337716     18.6758
+              prior to 1880  |   16.50787   6.790797     2.43   0.015     3.198148    29.81758
+                             |
+                       _cons |   70.29496   2.958558    23.76   0.000     64.49629    76.09363
+-----------------------------+----------------------------------------------------------------
+voicacc                      |
+                     lastcol |
+                     france  |  -11.78043    5.68437    -2.07   0.038    -22.92159    -.639269
+                      spain  |  -21.03875   7.519409    -2.80   0.005    -35.77652   -6.300977
+                   portugal  |   -9.98959   8.534028    -1.17   0.242    -26.71598    6.736798
+other (IT, GE, NT), replace  |   1.178896   9.840752     0.12   0.905    -18.10862    20.46641
+                             |
+                   freesince |
+                 since 1945  |    -8.8801   4.976188    -1.78   0.074    -18.63325     .873049
+                 since 1880  |   21.92237   6.206215     3.53   0.000     9.758416    34.08633
+              prior to 1880  |   26.37864   8.246904     3.20   0.001     10.21501    42.54228
+                             |
+                       _cons |   61.36448   3.658662    16.77   0.000     54.19364    68.53533
+-----------------------------+----------------------------------------------------------------
+               var(e.ctrlcrp)|   176.6917   22.25354                       138.042    226.1628
+                var(e.goveff)|   171.1318     21.847                      133.2492    219.7843
+               var(e.polstab)|     263.01   33.37319                      205.0991    337.2724
+               var(e.regqual)|   197.8379   25.13719                      154.2255    253.7831
+               var(e.lawrule)|   152.1884   19.31347                      118.6752    195.1656
+               var(e.voicacc)|   234.1932   29.75627                      182.5668    300.4186
+----------------------------------------------------------------------------------------------
+
+. 
+. estat lcpro
+
+Latent class marginal probabilities                        Number of obs = 127
+
+--------------------------------------------------------------
+             |            Delta-method
+             |     Margin   std. err.     [95% conf. interval]
+-------------+------------------------------------------------
+           C |
+          1  |   .4740748   .0452238      .3871524    .5625974
+          2  |   .5259252   .0452238      .4374026    .6128476
+--------------------------------------------------------------
+
+. 
+. estat lcmean
+
+Latent class marginal means                                Number of obs = 127
+
+------------------------------------------------------------------------------
+             |            Delta-method
+             |     Margin   std. err.      z    P>|z|     [95% conf. interval]
+-------------+----------------------------------------------------------------
+1            |
+     ctrlcrp |   24.03092   1.856894    12.94   0.000     20.39148    27.67037
+      goveff |   22.27443   1.849819    12.04   0.000     18.64886    25.90001
+     polstab |   26.59898   2.260183    11.77   0.000      22.1691    31.02886
+     regqual |   23.38907   1.984498    11.79   0.000     19.49953    27.27862
+     lawrule |   22.28783   1.723045    12.94   0.000     18.91072    25.66493
+     voicacc |   26.67357     2.1315    12.51   0.000     22.49591    30.85124
+-------------+----------------------------------------------------------------
+2            |
+     ctrlcrp |   58.98068   1.759746    33.52   0.000     55.53164    62.42971
+      goveff |   57.77218   1.702258    33.94   0.000     54.43581    61.10854
+     polstab |   58.52428   2.132096    27.45   0.000     54.34545    62.70311
+     regqual |   55.32015   1.834144    30.16   0.000     51.72529      58.915
+     lawrule |   58.86825   1.653667    35.60   0.000     55.62712    62.10938
+     voicacc |   56.98529   1.999571    28.50   0.000     53.06621    60.90438
+------------------------------------------------------------------------------
+
+. 
+. 
+. 
+. log close
+      name:  <unnamed>
+       log:  C:\Users\eran\Documents\model_output.log
+  log type:  text
+ closed on:  16 Feb 2024, 23:27:23
+----------------------------------------------------------------------------------------------------------------------------------
